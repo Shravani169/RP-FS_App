@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm install
+RUN npm install  
 
 # Copy the rest of the application code
 COPY . .
@@ -30,4 +30,5 @@ COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 5555
 
 # Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
