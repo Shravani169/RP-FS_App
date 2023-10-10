@@ -12,7 +12,7 @@ RUN npm install express
 
 COPY --chown=node:node . .
 
-EXPOSE 5555
+EXPOSE 3000
 
 CMD [ "node", "index.js" ]
 
