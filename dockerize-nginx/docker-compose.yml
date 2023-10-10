@@ -1,9 +1,12 @@
 version: '3'
 services:
   dev:
-    container_name: atc-hmi_frontend 
+    container_name: my-fullstack_app
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5555:5555"
+      - "80:80"
+
+
+
