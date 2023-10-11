@@ -1,0 +1,25 @@
+[
+    {
+      "httpMethod": "GET",
+      "pathParameters": {
+        "id": "123"
+      }
+    },
+    {
+      "httpMethod": "POST",
+      "body": "{ \"key\": \"value\" }"
+    },
+    {
+      "httpMethod": "PUT",
+      "pathParameters": {
+        "id": "123"
+      },
+      "body": "{ \"key\": \"new-value\" }"
+    },
+    {
+      "httpMethod": "DELETE",
+      "pathParameters": {
+        "id": "123"
+      }
+    }
+  ]

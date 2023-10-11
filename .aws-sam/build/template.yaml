@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: "TODO-LIST v5.0 \n"
+Globals:
+  Function:
+    Timeout: 3
+    MemorySize: 128
+Resources:
+  HttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: develop
+  MyApiGetFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: MyApiGetFunction
+      Handler: lambda_function
+      Runtime: python3.10
+      Architectures:
+      - x86_64
+      Role: arn:aws:iam::875625547240:role/fullstack-s3-lambda-access
+      FunctionName: null
+      Events:
+        Getapp:
+          Type: HttpApi
+          Properties:
+            Path: /
+            Method: GET
+            ApiId:
+              Ref: HttpApi
+    Metadata:
+      SamResourceId: MyApiGetFunction
